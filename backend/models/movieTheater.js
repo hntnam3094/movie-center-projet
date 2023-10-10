@@ -1,12 +1,20 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const ScreeningRateSchema = new Schema({
+const MovieTheaterSchema = new Schema({
     name: {
         type: String,
         require: true
     },
-    description: {
+    slug: {
+        type: String,
+        require: true,
+    },
+    chair: {
+        type: String,
+        require: true
+    },
+    movie_center_id: {
         type: String,
         require: true
     },
@@ -16,4 +24,4 @@ const ScreeningRateSchema = new Schema({
     }
 }, {timestamps: true})
 
-module.exports = mongoose.model(ScreeningRateSchema)
+module.exports = mongoose.model('movie_theater', MovieTheaterSchema)

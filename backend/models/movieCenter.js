@@ -4,15 +4,22 @@ const Schema = mongoose.Schema
 const MovieCenterSchema = new Schema({
       name: {
         type: String,
-        require: true
+        require: true,
+      },
+      slug: {
+        type: String,
+        require: true,
       },
       address: {
         type: String,
         require: true
       },
+      image: {
+        type: String
+      },
       status: {
         type: Number,
-        default: 0
+        default: 1
       }
 }, {timestamps: true})
 

@@ -21,7 +21,7 @@ const UserSchema =  new Schema({
         require: true
     },
     birth_day: {
-        type: Date,
+        type: String,
         require: true
     },
     status: {

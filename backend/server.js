@@ -7,7 +7,7 @@ const config = require('./config/database')
 const PORT = process.env.PORT || 3001
 const API = require('./routes/api')
 const bodyParser = require('body-parser')
-var cors = require('cors')
+const cors = require('cors')
 
 //config
 dotenv.config()
@@ -23,8 +23,8 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(passport.initialize())
-app.use('/api', API)
 
+app.use('/api', API)
 app.get('/', function (req, res, next) {
     res.send('<h1>Epxress - Mongo - Passport</h1>')
 })

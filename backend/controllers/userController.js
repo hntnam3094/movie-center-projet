@@ -13,7 +13,10 @@ async function signUp(req, res) {
     } else {
         const newUser = new User({
             username: req.body.username,
-            password: req.body.password
+            password: req.body.password,
+            phone_number: req.body.phone_number,
+            email: req.body.email,
+            birth_day: req.body.birth_day
         })
 
         try {
@@ -25,6 +28,7 @@ async function signUp(req, res) {
                     })
             }
         } catch (err) {
+            throw err
             return res.json({
                 success: false,
                 message: 'Username is already exists'
